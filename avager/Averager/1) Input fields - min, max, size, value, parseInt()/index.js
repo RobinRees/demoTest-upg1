@@ -45,6 +45,15 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 //      Log to the console the current value of #input_test_1. It should
 //      be 13, if you managed the previous E correctly.
 
+function f1 (){
+    document.getElementById("input_test_1").value = 13
+    let input_test_1 = document.querySelector("#input_test_1").value;
+
+
+
+}
+
+
 document.getElementById ("input_test_1").value = 13;
 
 

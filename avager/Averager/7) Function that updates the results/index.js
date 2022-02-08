@@ -41,7 +41,7 @@ The function getArrayOfSelectedNumbers does the following:
   NOTE that you need to set the argument className when you make the function call
 */
 
-function getArrayOfSelectedNumbers (className) {
+function getArrayOfSelectedNumbers(className) {
 
   // This weird line creates an array with all the numberDivs that have the 
   // class className. Naturally, when you call this function, you will need 
@@ -66,7 +66,36 @@ function getArrayOfSelectedNumbers (className) {
 
 }
 
+function adder(_array) {
+  let sum = 0;
+  for (let i = 0; i < _array.length; i++) {
+    sum = sum + _array[i];
+  }
+  return sum;
+}
+function averg(_array) {
+  return adder(_array) / _array.length;
+}
 
+function updateResults(className) {
+
+
+
+  let array = getArrayOfSelectedNumbers(className);
+
+  let selected = array.join(", "); // lägger till join för vad som ska vara mellan nummer
+
+  let amount = array.length;
+  let sum = adder(array);
+  let average = roundString(averg(array), 1);
+
+
+  document.querySelector("#selected span").innerHTML = selected;
+  document.querySelector("#amount span").innerHTML = amount; // Hur många nummer man markerat visas i span #amount
+  document.querySelector("#sum span").innerHTML = sum;
+  document.querySelector("#average span").innerHTML = average;
+
+}
 /*
 
 For this part, we need an array with all the selected numbers.
@@ -115,7 +144,9 @@ VIDEO:  Record a video where you explain what happens on these lines:
         console.log( [1,3,4,10,0,1].join(" - ") );
         This video must be called joinExplanation.
 
+// Join samlar hela arrayen , console loggar 
 
+// Siffrorna innehåller ett binde-streck mellan sifforna i loggen
 
 
 
@@ -145,9 +176,58 @@ below to always show a number that has one decimal.
 
 */
 
-function roundString(numberWithManyDecimals, decimals){
+function roundString(numberWithManyDecimals, decimals) {
   // From: https://stackoverflow.com/a/12698296/2027283
   var rounded = Math.pow(10, decimals);
   return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
 }
 
+function createNumberDiv() {
+
+  let numberDiv = document.createElement("div");
+  numberDiv.innerHTML = randomNumber(100);
+
+  numberDiv.addEventListener("click", function () {
+
+    numberDiv.classList.toggle("selected");
+
+    numberDiv.addEventListener("click", updateResults("selected"));
+  });
+
+
+
+  return numberDiv;
+
+}
+
+function gridMaker(gridContainer, R, C) {
+  gridContainer.style.gridTemplateRows = `repeat(${R}, 1fr)`;
+  gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
+
+  gridContainer.innerHTML = "";
+
+  let rowCol = R * C
+  for (let i = 0; i < rowCol; i++) {
+    gridContainer.appendChild(createNumberDiv())
+  };
+}
+
+
+function randomNumber(max) {
+  return Math.floor(max * Math.random());
+}
+
+document.querySelector("button").addEventListener("click", function () {
+
+  gridMaker(document.querySelector("#grid"), 10, 10);
+
+
+});
+
+gridMaker(document.querySelector("#grid"), 10, 10);
+
+
+
+// Förklarar Join join(" . "), Vad du får mellan nummerna 
+
+//Update results gör att selected, N, Sum och Avrage ska visas i spanen man valt. Få ett värde

@@ -10,8 +10,70 @@ Now we will add code so that we can select and deselect numbers
 from the grid by clicking on them.
 
 */
+function createNumberDiv () {
 
 
+    let numberDiv = document.createElement("div");
+    numberDiv.innerHTML = randomNumber(100);
+
+
+    numberDiv.addEventListener("click", function () {
+
+      numberDiv.classList.toggle("selected"); //Gör att när man trycker på (Numberdiv) Div. Så togglas "selected" i css.
+    })
+  
+    return numberDiv;
+  } // Skapar div med funktionen randomNumber
+  
+  function randomNumber (max)  { // Sätter namn på funktionen RandomNumber och att ( är max value som jag deklarerar över)
+  
+    return Math.floor(max * Math.random()) // <--- Skapar "Randomnumber och vilket nummer som ska vara i (createNumberDiv?")
+  }
+  
+  
+  function gridMaker (gridContainer, R, C) {
+  
+    gridContainer.style.gridTemplateRows = `repeat(${R}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`;
+
+
+
+    
+    gridContainer.innerHTML = ""; //Varje gång den deklarerass blir den tom
+
+
+
+
+  //Deklarerar hur många rader och col man ska ha. Repeterar R gånger 1fr och C gånger 1fr. 
+    let rowCol = R * C;
+    for (let i = 0; i < rowCol; i++) { 
+    gridContainer.appendChild(createNumberDiv())
+  //Hur många gånger det ska repeterar.  <--- Detta är en loop (one Loop)
+  
+  }
+  
+  // for (let c = 0; c < C; c++) {
+    //         for (let r = 0; r < R; r++) {
+    //                 gridContainer.appendChild(createNumberDiv());
+    //         }
+    // }
+  
+  
+  //Hur många gånger det ska repeterar.  <--- Detta är en nested loop.
+  
+  }
+  document.querySelector("button").addEventListener ("click", function () {
+
+    gridMaker (document.querySelector("#grid"), 10, 10);
+
+    
+
+
+
+
+});
+  
+ // Sätter alla funkioner i spin
 /*
 
 STEP 1
@@ -50,5 +112,7 @@ The only thing the eventListener needs to do (so far) is to toggle the class "se
 the classList.
 
 */
+
+
 
 
