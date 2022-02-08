@@ -54,13 +54,15 @@ VIDEO:  Make a video where you explain how adder works line by line. Max 3 minut
 
 */
 
-function adder ( _array ) {
-  let sum = 0;
-  for (let i = 0; i < _array.length; i++){
-    sum = sum + _array[i];
+function adder ( _array ) { // Skapar en funktion som jag kallar adder. Har parametern _array.
+  let sum = 0; // Jag deklarerar VARIABELN sum och ger den värted 0
+  for (let i = 0; i < _array.length; i++){ //Jag itererar en for-loop där jag deklarerar countern i och ger 
+                                            //den värdet 0. När i mindre än arrayens längd adderas 1 fram tills 
+                                            //summan av i är lika med arrayens längd. 
+    sum = sum + _array[i]; // sum har värdet 0 från början. Sen ändras i till 1 då blir sum 0 + 1. Sen 0  + 2 osv.
   }
   
-  return sum;
+  return sum; // retunerar loopen 
 
 
 }

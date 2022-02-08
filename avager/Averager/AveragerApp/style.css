@@ -3,7 +3,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: blanchedalmond;
+    background-color: beige;
   }
   
 * {
@@ -36,9 +36,8 @@ body {
     font-size: 3vh;
 
 
-    background-color: purple;
-  
-    border: 1px solid blue;
+    background-color: hotpink;
+
   
     font: 25px "Supermercado One";
   }
@@ -56,7 +55,7 @@ body {
   }
   
 #grid > div.selected {
-    background-color: blue;
+    background-color: seagreen;
     color: white;
     transition: 1s;
     

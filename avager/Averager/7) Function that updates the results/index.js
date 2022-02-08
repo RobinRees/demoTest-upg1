@@ -146,7 +146,8 @@ VIDEO:  Record a video where you explain what happens on these lines:
 
 // Join samlar hela arrayen , console loggar 
 
-// Siffrorna innehåller ett binde-streck mellan sifforna i loggen
+// Siffrorna innehåller ett binde-streck mellan sifforna i loggen. Använder du ett tomt så blir det ett komma 
+utan mellanrum som standard.
 
 
 
@@ -228,6 +229,24 @@ gridMaker(document.querySelector("#grid"), 10, 10);
 
 
 
-// Förklarar Join join(" . "), Vad du får mellan nummerna 
+// Förklarar Join join(", "), Vad du får mellan nummerna 
 
 //Update results gör att selected, N, Sum och Avrage ska visas i spanen man valt. Få ett värde
+
+
+
+
+
+function updateResults (className) {
+  let array = getArrayOfSelectedNumbers(className)
+  let selected = array.join(', ')
+  let amount = array.length
+  let sum = adder(array)
+  let average = roundString(averg(array), 1)
+
+  document.querySelector('#selected span').innerHTML = selected
+  document.querySelector('#amount span').innerHTML = amount
+  document.querySelector('#average span').innerHTML = average
+  document.querySelector('#sum span').innerHTML = sum
+
+}

@@ -40,6 +40,7 @@ function gridMaker (gridContainer, R, C) {
 //Hur många gånger det ska repeterar.  <--- Detta är en loop (one Loop)
 
 }
+gridMaker (document.querySelector("#grid"), 10, 10); // Sätter alla funkioner i spin
 
 // for (let c = 0; c < C; c++) {
   //         for (let r = 0; r < R; r++) {
@@ -48,12 +49,25 @@ function gridMaker (gridContainer, R, C) {
   // }
 
 
+
+
 //Hur många gånger det ska repeterar.  <--- Detta är en nested loop.
 
 }
 
 
-gridMaker (document.querySelector("#grid"), 10, 10); // Sätter alla funkioner i spin
+
+
+
+
+
+
+
+
+
+// nested loops fungerar på det sättet att den första loopen itereras en gång och sedan itereras den inre loopen 
+// den inre loopen itereras tills den uppnåt alla inkrement för att den första loopen sedan ska itereras igen
+// den yttre loopen skapar en column och den inre loopen skapar alla raderna och dess innehåll för just denna column
 
 
 
