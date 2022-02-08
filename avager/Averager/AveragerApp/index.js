@@ -87,10 +87,21 @@ function updateResults (className) {
 
 // EVENTLISTENERS FOR EXISTING HTML-ELEMENTS
 
-document.querySelector('button').addEventListener('click', function () {
-  gridMaker(document.querySelector('#grid'), 10, 10)
-})
+document.querySelector("button").addEventListener("click", function () {
+    gridMaker(
+        document.querySelector("#grid"),
+        document.querySelector("#inputRows").value,
+        document.querySelector("#inputCols").value
+    )
+
+
+
+
+
+
+});
 
 // DIRECT CODE
 // Initialise the page directly, no need to wait for user to click first time.
-gridMaker(document.querySelector('#grid'), 10, 10)
+
+document.querySelector("button").click();

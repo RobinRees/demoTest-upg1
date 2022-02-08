@@ -55,8 +55,8 @@ body {
   }
   
 #grid > div.selected {
-    background-color: aqua;
-    color: navy;
+    background-color: blue;
+    color: white;
     transition: 1s;
     
   }
