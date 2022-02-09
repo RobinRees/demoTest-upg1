@@ -5,7 +5,7 @@
 
 // Include the link to your Github Repository here:
 // Link:
-// https://github.com/RobinRees/demoTest-upg1
+// https://github.com/RobinRees/demoTest-upg1.git
 // GLOBAL VARIABLES
 // None allowed
 
